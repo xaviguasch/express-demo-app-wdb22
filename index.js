@@ -11,6 +11,17 @@ const app = express()
 app.get('/', (req, res) => {
   res.send('This is the homepage!')
 })
+
+app.get('/r/:subreddit', (req, res) => {
+  const { subreddit } = req.params
+  res.send(`<h1>Browsing the ${subreddit} sub</h1>`)
+})
+
+app.get('/r/:subreddit/:postId', (req, res) => {
+  const { subreddit, postId } = req.params
+  res.send(`<h1>Viewing post ID ${postId} on the ${subreddit} sub</h1>`)
+})
+
 app.get('/cats', (req, res) => {
   res.send('MEOW!!!!')
 })
@@ -19,6 +30,11 @@ app.post('/cats', (req, res) => {
 })
 app.get('/dogs', (req, res) => {
   res.send('WOOOOF!!!!')
+})
+
+app.get('/search', (req, res) => {
+  const { q } = req.query
+  res.send(`<h1>Search results for: ${q}</h1>`)
 })
 
 app.get('*', (req, res) => {

@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/xaviguasch/express-demo-app-wdb22#readme",
   "dependencies": {
-    "express": "^4.18.1"
+    "express": "^4.18.1",
+    "nodemon": "^2.0.16"
   }
 }
